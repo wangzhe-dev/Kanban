@@ -5,7 +5,6 @@
  * @LastEditTime: 2025-09-06 13:34:48
  * @Description:
  */
-const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 module.exports = {
   outputDir: "dist",
   publicPath: "./",
@@ -36,16 +35,6 @@ module.exports = {
       splitChunks: {
         // 你的配置
       },
-      minimizer: [
-        new UglifyJsPlugin({
-          uglifyOptions: {
-            compress: {
-              drop_console: true,
-              drop_debugger: true,
-            },
-          },
-        }),
-      ],
     };
     Object.assign(config, {
       optimization,
