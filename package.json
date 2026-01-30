@@ -1,0 +1,56 @@
+{
+	"name": "3dmodel",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"serve": "vue-cli-service serve",
+		"build:test": "vue-cli-service build --mode test",
+		"build:uat": "vue-cli-service build --mode uat",
+		"build": "vue-cli-service build"
+	},
+	"dependencies": {
+		"@jiaminghi/data-view": "^2.10.0",
+		"axios": "^0.26.0",
+		"core-js": "^3.6.5",
+		"countup": "^1.8.2",
+		"element-ui": "^2.13.2",
+		"file-saver": "^2.0.2",
+		"jsencrypt": "^3.0.0-rc.1",
+		"moment": "^2.29.4",
+		"stompjs": "^2.3.3",
+		"three": "0.118.3",
+		"three-css2drender": "^1.0.0",
+		"three-obj-mtl-loader": "^1.0.3",
+		"three-orbit-controls": "^82.1.0",
+		"three-outlinepass": "^1.0.8",
+		"vue": "^2.6.11",
+		"vue-router": "^3.2.0",
+		"vue-seamless-scroll": "^1.1.23",
+		"vuex": "^3.4.0"
+	},
+	"devDependencies": {
+		"@vue/cli-plugin-babel": "~4.4.0",
+		"@vue/cli-plugin-router": "~4.4.0",
+		"@vue/cli-plugin-vuex": "~4.4.0",
+		"@vue/cli-service": "~4.4.0",
+		"cz-conventional-changelog": "^3.3.0",
+		"echarts": "^4.9.0",
+		"echarts-liquidfill": "^2.0.6",
+		"lodash": "^4.17.21",
+		"sass": "^1.26.5",
+		"sass-loader": "^8.0.2",
+		"uglifyjs-webpack-plugin": "^1.1.1",
+		"vue-seamless-scroll": "^1.1.23",
+		"vue-template-compiler": "^2.6.11"
+	},
+	"browserslist": [
+		"> 1%",
+		"last 2 versions",
+		"not dead"
+	],
+	"config": {
+		"commitizen": {
+			"path": "./node_modules/cz-conventional-changelog"
+		}
+	}
+}

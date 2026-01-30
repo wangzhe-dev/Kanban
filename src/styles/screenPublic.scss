@@ -1,0 +1,87 @@
+.screen-wrap {
+  width: 3840px;
+  height: 2160px;
+}
+
+.row-center {
+  display: flex;
+  justify-content: center;
+}
+
+.row-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.row-around {
+  display: flex;
+  justify-content: space-around;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.w100Pct {
+  width: 100%;
+}
+
+.title {
+  font-size: 16px;
+  text-align: left;
+  font-weight: 600;
+  border-left: 3px solid #86bdff;
+  padding-left: 4px;
+  margin: 10px;
+}
+
+.h100 {
+  height: 100%;
+}
+
+.h80 {
+  height: 80%;
+}
+
+.F30 {
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.F14 {
+  font-size: 14px;
+}
+
+.yellow {
+  color: #d48f06;
+}
+
+.green {
+  color: #66d385;
+}
+
+.pink {
+  color: #c265f5;
+}
+
+.red {
+  color: #f83954;
+}
+
+.border_bottom {
+  border-bottom: 1px solid #86bdff;
+}
+
+.border_style {
+  border: 1px solid #86bdff;
+}
+
+@font-face {
+  font-family: din-bold;
+  src: url("../../assets/font/DINCondensed-Bold.ttf");
+}
+@font-face {
+  font-family: "YouSheBiaoTiHei";
+  src: url("@/assets/fonts/优设标题黑.ttf");
+}
