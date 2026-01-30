@@ -2,23 +2,37 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 
-// 数据融合
-import PanelAssembly from "../views/DigitalFusion/PanelAssembly/index.vue";
-import PreProcessingLine from "../views/DigitalFusion/PreProcessingLine/index.vue";
-import ProfileCutting from "../views/DigitalFusion/ProfileCutting/index.vue";
-import SmallAssembly from "../views/DigitalFusion/SmallAssembly/index.vue";
-import SmartSteelPlateLibrary from "../views/DigitalFusion/SmartSteelPlateLibrary/index.vue";
-import SteelPlateCutting from "../views/DigitalFusion/SteelPlateCutting/index.vue";
-import StraightSection from "../views/DigitalFusion/StraightSection/index.vue";
-import TProfile from "../views/DigitalFusion/TProfile/index.vue";
+// 数据融合（路由懒加载）
+const SmartSteelPlateLibrary = () =>
+  import(/* webpackChunkName: "digital-fusion" */ "../views/DigitalFusion/SmartSteelPlateLibrary/index.vue");
+const PreProcessingLine = () =>
+  import(/* webpackChunkName: "digital-fusion" */ "../views/DigitalFusion/PreProcessingLine/index.vue");
+const SteelPlateCutting = () =>
+  import(/* webpackChunkName: "digital-fusion" */ "../views/DigitalFusion/SteelPlateCutting/index.vue");
+const ProfileCutting = () =>
+  import(/* webpackChunkName: "digital-fusion" */ "../views/DigitalFusion/ProfileCutting/index.vue");
+const TProfile = () =>
+  import(/* webpackChunkName: "digital-fusion" */ "../views/DigitalFusion/TProfile/index.vue");
+const SmallAssembly = () =>
+  import(/* webpackChunkName: "digital-fusion" */ "../views/DigitalFusion/SmallAssembly/index.vue");
+const PanelAssembly = () =>
+  import(/* webpackChunkName: "digital-fusion" */ "../views/DigitalFusion/PanelAssembly/index.vue");
+const StraightSection = () =>
+  import(/* webpackChunkName: "digital-fusion" */ "../views/DigitalFusion/StraightSection/index.vue");
 
-// 职能看板
-import EnergyManagement from "../views/FunctionalKanban/EnergyManagement/index.vue";
-import EquipmentManagement from "../views/FunctionalKanban/EquipmentManagement/index.vue";
-import IntelligentControlCenter from "../views/FunctionalKanban/IntelligentControlCenter/index.vue";
-import InventoryManagement from "../views/FunctionalKanban/InventoryManagement/index.vue";
-import ProductionManagement from "../views/FunctionalKanban/ProductionManagement/index.vue";
-import QualityManagement from "../views/FunctionalKanban/QualityManagement/index.vue";
+// 职能看板（路由懒加载）
+const ProductionManagement = () =>
+  import(/* webpackChunkName: "functional-kanban" */ "../views/FunctionalKanban/ProductionManagement/index.vue");
+const EquipmentManagement = () =>
+  import(/* webpackChunkName: "functional-kanban" */ "../views/FunctionalKanban/EquipmentManagement/index.vue");
+const QualityManagement = () =>
+  import(/* webpackChunkName: "functional-kanban" */ "../views/FunctionalKanban/QualityManagement/index.vue");
+const EnergyManagement = () =>
+  import(/* webpackChunkName: "functional-kanban" */ "../views/FunctionalKanban/EnergyManagement/index.vue");
+const InventoryManagement = () =>
+  import(/* webpackChunkName: "functional-kanban" */ "../views/FunctionalKanban/InventoryManagement/index.vue");
+const IntelligentControlCenter = () =>
+  import(/* webpackChunkName: "functional-kanban" */ "../views/FunctionalKanban/IntelligentControlCenter/index.vue");
 
 const originalPush = VueRouter.prototype.push;
 VueRouter.prototype.push = function push(location) {
@@ -119,6 +133,9 @@ const routes = [
   },
 ];
 
-const router = new VueRouter({ routes });
+const router = new VueRouter({
+  base: process.env.BASE_URL,
+  routes,
+});
 
 export default router;
