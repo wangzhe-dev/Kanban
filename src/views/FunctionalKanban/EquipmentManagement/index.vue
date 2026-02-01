@@ -1,7 +1,7 @@
 <template>
   <div class="container-EquipmentManagement">
-    <div class="df-screen" ref="appRef">
-      <video class="bg-video" :src="bgVideo" autoplay loop muted playsinline></video>
+    <div class="df-screen" ref="appRef" :style="{ visibility: videoReady ? 'visible' : 'hidden' }">
+      <video class="bg-video" :src="bgVideo" autoplay loop muted playsinline @canplay="videoReady = true"></video>
       <FunctionalKanbanLayout activeTab="EquipmentManagement" centerWidth="34%" @tab-click="handleTabClick">
         <template #left-top>
           <Card title="设备监控状态（月）" :flex="3" column="left" position="top" :totalCards="3" :headerTop="'10px'"
@@ -108,6 +108,7 @@ export default {
   mixins: [drawMixin],
   data() {
     return {
+      videoReady: false,
       cardBg,
       znCenterBg,
       bgVideo: require("@/assets/images/ZN/shebei/sb1.webm"),
@@ -234,7 +235,10 @@ export default {
 }
 
 .df-screen {
-  background: transparent;
+  background-image: url("../../../assets/images/DF/bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   width: 3840px;
   height: 2160px;
   color: #fff;

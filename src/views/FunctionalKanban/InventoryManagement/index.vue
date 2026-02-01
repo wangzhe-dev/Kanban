@@ -1,7 +1,7 @@
 <template>
   <div class="container-InventoryManagement">
-    <div class="df-screen" ref="appRef">
-      <video class="bg-video" :src="bgVideo" autoplay loop muted playsinline></video>
+    <div class="df-screen" ref="appRef" :style="{ visibility: videoReady ? 'visible' : 'hidden' }">
+      <video class="bg-video" :src="bgVideo" autoplay loop muted playsinline @canplay="videoReady = true"></video>
       <FunctionalKanbanLayout activeTab="InventoryManagement" centerWidth="34%" @tab-click="handleTabClick">
         <template #left-top>
           <Card title="钢板库库存信息" :flex="3" column="left" position="top" :totalCards="3" :headerTop="'10px'"
@@ -132,6 +132,7 @@ export default {
   data() {
     return {
       cardBg,
+      videoReady: false,
       bgVideo: require("@/assets/images/DF/bg_g.webm"),
       centerKpiItems: [
         { key: "segment", label: "分段齐套率", value: "80%" },
@@ -563,7 +564,10 @@ export default {
 }
 /*   background-image: url("../../../assets/images/DF/bg_g.gif"); */
 .df-screen {
-  background: transparent;
+  background-image: url("../../../assets/images/DF/bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   width: 3840px;
   height: 2160px;
   color: #fff;
