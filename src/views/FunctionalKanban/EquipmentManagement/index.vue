@@ -1,6 +1,7 @@
 <template>
   <div class="container-EquipmentManagement">
     <div class="df-screen" ref="appRef">
+      <video class="bg-video" :src="bgVideo" autoplay loop muted playsinline></video>
       <FunctionalKanbanLayout activeTab="EquipmentManagement" centerWidth="34%" @tab-click="handleTabClick">
         <template #left-top>
           <Card title="设备监控状态（月）" :flex="3" column="left" position="top" :totalCards="3" :headerTop="'10px'"
@@ -109,6 +110,7 @@ export default {
     return {
       cardBg,
       znCenterBg,
+      bgVideo: require("@/assets/images/ZN/shebei/sb1.webm"),
       mockData,
       centerTrendRange: "day",
       centerTrendTabs: [
@@ -216,11 +218,15 @@ export default {
   position: relative;
 }
 
-.fk-main-layout {
-  background-image: url("../../../assets/images//ZN/shebei/sb1.gif");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100% 82%;
+.bg-video {
+  position: absolute;
+  top: 9%;
+  left: 0;
+  width: 100%;
+  height: 82%;
+  object-fit: fill;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .df-card {
