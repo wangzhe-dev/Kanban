@@ -234,10 +234,7 @@ export default {
 }
 
 .df-screen {
-  background-image: url("../../../assets/images/DF/bg.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background: transparent;
   width: 3840px;
   height: 2160px;
   color: #fff;
